@@ -13,8 +13,9 @@ class InvalidArgumentException extends \InvalidArgumentException
 	public static function newInvalidType($argumentName, $actual, $expectedType = null)
 	{
 		$actual = is_object($actual) ? get_class($actual) : gettype($actual);
+		if ($argumentName[0] != "$") $argumentName = '$' . $argumentName;
 
-		return new self('$' . $argumentName . " has an invalid type <$actual>."
+		return new self($argumentName . " has an invalid type <$actual>."
 			. (is_null($expectedType) ? "" : " Expecting <$expectedType>"));
 	}
 
@@ -30,8 +31,9 @@ class InvalidArgumentException extends \InvalidArgumentException
 	public static function newInvalidValue($argumentName, $actual, $reason = null)
 	{
 		$actual = StringArgumentFormatter::valueToString($actual);
+		if ($argumentName[0] != "$") $argumentName = '$' . $argumentName;
 
-		return new self('$' . $argumentName . " has an invalid value: $actual"
+		return new self( $argumentName . " has an invalid value: $actual"
 			. (is_null($reason) ? "" : ". Reason: " . $reason));
 	}
 
