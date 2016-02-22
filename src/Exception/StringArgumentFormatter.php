@@ -57,6 +57,35 @@ class StringArgumentFormatter
         return $text;
     }
 
+    /**
+     * Converts a value to a string for inclusion in error messages.
+     * @param mixed $value
+     * @return string
+     */
+    public static function valueToString($value)
+    {
+        if (is_object($value))
+        {
+            return "<" . get_class($value) . ">";
+        }
+        elseif (is_string($value))
+        {
+            return '"' . $value . '"';
+        }
+        elseif (is_scalar($value))
+        {
+            return (string) $value;
+        }
+        elseif (is_array($value))
+        {
+            return "[" . implode($value, ",") . "]";
+        }
+        else
+        {
+            return "<" . gettype($value) . ">";
+        }
+    }
+
 	private function __construct()
 	{
 		// Private constructor
