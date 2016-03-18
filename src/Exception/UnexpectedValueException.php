@@ -5,6 +5,8 @@ class UnexpectedValueException extends \UnexpectedValueException
 {
     /**
      * Creates a new exception indicating that a return value from a method call was invalid.
+	 *
+	 * This exception indicates a programming error in the code.
      *
      * @param mixed  $classOrObject Class or object involved.
      * @param string $method        Method that was called.
