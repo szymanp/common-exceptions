@@ -12,17 +12,17 @@ class InvalidArgumentExceptionTest extends \PHPUnit_Framework_TestCase
 	{
 		$actual = 243;
 
-		throw InvalidArgumentException::newInvalidType("userName", $actual, "string");
+		throw new InvalidArgumentException("userName", $actual, "string");
 	}
 
 	/**
-	 * @expectedException 			\DomainException
+	 * @expectedException 			Szyman\Exception\DomainException
 	 * @expectedExceptionMessage	$age has an invalid value: -1. Reason: Must be greater than zero
 	 */
 	public function testInvalidValue()
 	{
 		$actual = -1;
 
-		throw InvalidArgumentException::newInvalidValue("age", $actual, "Must be greater than zero");
+		throw new DomainException("age", $actual, "Must be greater than zero");
 	}
 }
