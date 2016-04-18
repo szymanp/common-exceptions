@@ -38,8 +38,7 @@ class InvalidArgumentException extends \InvalidArgumentException
 		$actual = StringArgumentFormatter::valueToString($actual);
 		if ($argumentName[0] != "$") $argumentName = '$' . $argumentName;
 
-		return new DomainException( $argumentName . " has an invalid value: $actual"
+		return new \DomainException( $argumentName . " has an invalid value: $actual"
 			. (is_null($reason) ? "" : ". Reason: " . $reason));
 	}
-
 }

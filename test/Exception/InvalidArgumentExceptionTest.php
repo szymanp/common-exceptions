@@ -16,7 +16,7 @@ class InvalidArgumentExceptionTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @expectedException 			Szyman\Exception\InvalidArgumentException
+	 * @expectedException 			\DomainException
 	 * @expectedExceptionMessage	$age has an invalid value: -1. Reason: Must be greater than zero
 	 */
 	public function testInvalidValue()
