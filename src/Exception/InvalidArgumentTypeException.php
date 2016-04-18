@@ -1,7 +1,7 @@
 <?php
 namespace Szyman\Exception;
 
-class InvalidArgumentException extends \InvalidArgumentException
+class InvalidArgumentTypeException extends \InvalidArgumentException
 {
 	/**
 	 * Creates a new exception indicating that an argument of an invalid type was passed.

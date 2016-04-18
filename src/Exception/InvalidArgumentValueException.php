@@ -1,7 +1,7 @@
 <?php
 namespace Szyman\Exception;
 
-class DomainException extends \DomainException
+class InvalidArgumentValueException extends \DomainException
 {
 	/**
 	 * Creates a new exception indicating that an argument with an invalid value was passed.
